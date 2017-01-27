@@ -27,6 +27,8 @@
         game.load.image('e_transparent', 'src/img/e_transparent.png');
         game.load.image('n_transparent', 'src/img/n_transparent.png');
         game.load.image('o_transparent', 'src/img/o_transparent.png');
+        game.load.image('i_transparent', 'src/img/i_transparent.png');
+        game.load.image('c_transparent', 'src/img/c_transparent.png');
 
         game.load.image('drupal', 'src/img/drupal.png', 24, 36);
         game.load.image('sitecore', 'src/img/sitecore.png', 24, 36);
@@ -125,11 +127,15 @@
         //  Here we'll create 12 of them evenly spaced apart
         for (var i = 0; i < 25; i++) {
             var letter;
-            var random_letter = Math.random() * 4.0;
+            var random_letter = Math.random() * 6.0;
             if (random_letter < 1) {
                 letter = 'e_transparent';
             } else if (random_letter < 2) {
                 letter = 'o_transparent';
+            } else if (random_letter < 3) {
+                letter = 'i_transparent';
+            } else if (random_letter < 4) {
+                letter = 'c_transparent';
             } else {
                 letter = 'n_transparent';
             }
