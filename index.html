@@ -19,7 +19,7 @@
 
     function preload() {
 
-        game.load.image('sky', 'assets/sky.png');
+        game.load.image('sky', 'src/img/sky-bg.svg');
         game.load.image('ground', 'assets/platform.png');
         game.load.image('star', 'assets/star.png');
         game.load.image('juke', 'src/img/juke.svg', 32, 48);
@@ -46,7 +46,7 @@
 
         //  A simple background for our game
         sky = game.add.sprite(0, 0, 'sky');
-        sky.scale.setTo(3, 1);
+        sky.scale.setTo(2, 1);
 
         //  The platforms group contains the ground and the 2 ledges we can jump on
         platforms = game.add.group();
