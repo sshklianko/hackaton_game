@@ -65,6 +65,7 @@
 
         // The player and its settings
         player = game.add.sprite(32, game.world.height - 150, 'dude');
+        player.scale.setTo(0.05, 0.05);
 
         //  We need to enable physics on the player
         game.physics.arcade.enable(player);
