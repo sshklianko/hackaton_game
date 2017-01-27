@@ -108,7 +108,9 @@
 
         //  The score
         scoreText = game.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#000'});
+        scoreText.fixedToCamera = true;
         timeText = game.add.text(16, 48, 'time: 0', {fontSize: '32px', fill: '#000'});
+        timeText.fixedToCamera = true;
 
         //  Our controls.
         cursors = game.input.keyboard.createCursorKeys();
@@ -116,6 +118,9 @@
         game.world.setBounds(0, 0, 4000, 600);
 
         startTime = new Date().getTime();
+
+        game.camera.follow(player, Phaser.Camera.FOLLOW_TOPDOWN_TIGHT);
+        game.camera.bounds.setTo(0, 0, 4000, 600);
     }
 
     function update() {
@@ -133,12 +138,10 @@
         if (cursors.left.isDown) {
             //  Move to the left
             player.body.velocity.x = -300;
-            moveCameraLeft();
         }
         else if (cursors.right.isDown) {
             //  Move to the right
             player.body.velocity.x = 300;
-            moveCameraRight();
         }
 
         //  Allow the player to jump if they are touching the ground.
@@ -148,28 +151,6 @@
 
         updateTime();
 
-    }
-
-    function moveCameraRight() {
-        if (playerHasReachedCenterOfScreen()) {
-            game.camera.x += 2;
-            scoreText.position.x = scoreText.position.x + 2;
-            timeText.position.x = timeText.position.x + 2;
-        }
-    }
-
-    function moveCameraLeft() {
-        if (playerHasReachedCenterOfScreen()) {
-            game.camera.x -= 2;
-            if (scoreText.position.x > 18) {
-                scoreText.position.x = scoreText.position.x - 2;
-                timeText.position.x = timeText.position.x - 2;
-            }
-        }
-    }
-
-    function playerHasReachedCenterOfScreen() {
-        return player.position.x > (viewportWidth / 2);
     }
 
     function collectStar(player, star) {
