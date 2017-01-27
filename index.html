@@ -48,6 +48,7 @@
     var startTime;
     var maxTime = 60;
     var timeText;
+    var time;
 
     var gameOver = false;
 
@@ -210,6 +211,10 @@
             }
 
             updateTime();
+            if (player.x > 3800) {
+                setGameWon();
+            }
+
         }
 
 
@@ -230,7 +235,7 @@
     }
 
     function updateTime() {
-        var time = Math.max(0, (maxTime - Math.floor((new Date().getTime() - startTime) / 1000)));
+        time = Math.max(0, (maxTime - Math.floor((new Date().getTime() - startTime) / 1000)));
         timeText.text = 'time: ' + time;
         if (time == 0) {
             setGameOver();
@@ -239,6 +244,14 @@
 
     function setGameOver() {
         game.add.text(200 + game.camera.position.x, 200, 'GAME OVER!', {fontSize: '64px', fill: '#000'});
+        gameOver = true;
+    }
+
+    function setGameWon() {
+        game.add.text(250 + game.camera.position.x, 150, 'You won!', {fontSize: '64px', fill: '#000'});
+        game.add.text(250 + game.camera.position.x, 250, 'Score: ' + score, {fontSize: '16px', fill: '#000'});
+        game.add.text(250 + game.camera.position.x, 300, 'Time: ' + time, {fontSize: '16px', fill: '#000'});
+        game.add.text(250 + game.camera.position.x, 350, 'Points: ' + (score + time), {fontSize: '32px', fill: '#000'});
         gameOver = true;
     }
 
