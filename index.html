@@ -24,6 +24,9 @@
         game.load.image('star', 'assets/star.png');
         game.load.image('juke', 'src/img/juke.svg', 32, 48);
 
+        game.load.image('e_transparent', 'src/img/e_transparent.png');
+        game.load.image('n_transparent', 'src/img/n_transparent.png');
+
     }
 
     var player;
@@ -98,8 +101,17 @@
 
         //  Here we'll create 12 of them evenly spaced apart
         for (var i = 0; i < 12; i++) {
+            var letter;
+            var random_letter = Math.random() * 3.0;
+            console.log(random_letter);
+            if (random_letter < 1 ) {
+                letter = 'e_transparent';
+            } else {
+                letter = 'n_transparent';
+            }
+
             //  Create a star inside of the 'stars' group
-            var star = stars.create(i * 70, 0, 'star');
+            var star = stars.create(i * 70, 0, letter);
 
             //  Let gravity do its thing
             star.body.gravity.y = 300;
