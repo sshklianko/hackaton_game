@@ -34,6 +34,10 @@
     var score = 0;
     var scoreText;
 
+    var startTime;
+    var endTime;
+    var timeText;
+
     function create() {
 
         //  We're going to be using physics, so enable the Arcade Physics system
@@ -106,6 +110,8 @@
         cursors = game.input.keyboard.createCursorKeys();
 
         game.world.setBounds(0, 0, 2000, 2000);
+
+        startTime = new Date();
     }
 
     function update() {
