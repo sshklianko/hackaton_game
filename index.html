@@ -21,6 +21,7 @@
         game.load.image('sky', 'src/img/sky-bg.png');
         game.load.image('ground', 'src/img/cloud-base.png');
         game.load.image('cloud', 'src/img/cloud2.png');
+        game.load.image('rocket', 'src/img/rocket.png');
         game.load.image('juke', 'src/img/juke.svg', 32, 48);
 
         game.load.image('e_transparent', 'src/img/e_transparent.png');
@@ -191,6 +192,7 @@
         createCloud(2600, 400);
         createCloud(2800, 300);
         createCloud(3200, 300);
+        game.add.sprite(3800, 0, 'rocket');
     }
 
     function createCloud(x, y) {
