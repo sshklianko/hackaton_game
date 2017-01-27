@@ -21,7 +21,7 @@
         game.load.image('sky', 'assets/sky.png');
         game.load.image('ground', 'assets/platform.png');
         game.load.image('star', 'assets/star.png');
-        game.load.image('dude', 'src/img/juke.svg', 32, 48);
+        game.load.image('juke', 'src/img/juke.svg', 32, 48);
 
     }
 
@@ -64,7 +64,7 @@
         ledge.body.immovable = true;
 
         // The player and its settings
-        player = game.add.sprite(32, game.world.height - 150, 'dude');
+        player = game.add.sprite(32, game.world.height - 150, 'juke');
         player.scale.setTo(0.05, 0.05);
 
         //  We need to enable physics on the player
