@@ -79,7 +79,7 @@
 
         //  Player physics properties. Give the little guy a slight bounce.
         player.body.bounce.y = 0.2;
-        player.body.gravity.y = 300;
+        player.body.gravity.y = 500;
         player.body.collideWorldBounds = true;
 
         //  Our two animations, walking left and right.
@@ -130,18 +130,18 @@
 
         if (cursors.left.isDown) {
             //  Move to the left
-            player.body.velocity.x = -150;
+            player.body.velocity.x = -200;
             moveCameraLeft();
         }
         else if (cursors.right.isDown) {
             //  Move to the right
-            player.body.velocity.x = 150;
+            player.body.velocity.x = 200;
             moveCameraRight();
         }
 
         //  Allow the player to jump if they are touching the ground.
         if (cursors.up.isDown && player.body.touching.down) {
-            player.body.velocity.y = -350;
+            player.body.velocity.y = -400;
         }
 
         updateTime();
