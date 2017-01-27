@@ -105,6 +105,7 @@
 
         //  The score
         scoreText = game.add.text(16, 16, 'score: 0', {fontSize: '32px', fill: '#000'});
+        timeText = game.add.text(16, 48, 'time: 0', {fontSize: '32px', fill: '#000'});
 
         //  Our controls.
         cursors = game.input.keyboard.createCursorKeys();
@@ -147,11 +148,13 @@
     function moveCameraRight() {
         game.camera.x += 2;
         scoreText.position.x = scoreText.position.x + 2;
+        timeText.position.x = timeText.position.x + 2;
     }
 
     function moveCameraLeft() {
         game.camera.x -= 2;
         scoreText.position.x = scoreText.position.x - 2;
+        timeText.position.x = timeText.position.x - 2;
     }
 
     function collectStar(player, star) {
