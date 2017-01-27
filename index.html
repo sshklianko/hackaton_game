@@ -18,9 +18,9 @@
     var game = new Phaser.Game(viewportWidth, viewportHeight, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 
     function preload() {
-
         game.load.image('sky', 'src/img/sky-bg.png');
-        game.load.image('ground', 'src/img/floor.png');
+        game.load.image('ground', 'src/img/cloud-base.png');
+        game.load.image('cloud', 'src/img/cloud-base.png');
         game.load.image('star', 'assets/star.png');
         game.load.image('juke', 'src/img/juke.svg', 32, 48);
 
@@ -66,10 +66,10 @@
         ground.body.immovable = true;
 
         //  Now let's create two ledges
-        var ledge = platforms.create(400, 400, 'ground');
+        var ledge = platforms.create(400, 400, 'cloud');
         ledge.body.immovable = true;
 
-        ledge = platforms.create(-150, 250, 'ground');
+        ledge = platforms.create(-150, 250, 'cloud');
         ledge.body.immovable = true;
 
         // The player and its settings
