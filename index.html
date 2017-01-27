@@ -60,19 +60,19 @@
         drupal.scale.setTo(0.15, 0.15);
 
         drupal.body.gravity.y = 300;
-        drupal.body.bounce.y = 0.7 + Math.random() * 0.2;
+        drupal.body.bounce.y = 1;
 
         var wordpress = enemies.create(Math.floor(Math.random() * game.world.width), 0, 'wordpress');
         wordpress.scale.setTo(0.15, 0.15);
 
         wordpress.body.gravity.y = 300;
-        wordpress.body.bounce.y = 0.7 + Math.random() * 0.2;
+        wordpress.body.bounce.y = 1;
 
         var sitecore = enemies.create(Math.floor(Math.random() * game.world.width), 0, 'sitecore');
         sitecore.scale.setTo(0.05, 0.05);
 
         sitecore.body.gravity.y = 300;
-        sitecore.body.bounce.y = 0.7 + Math.random() * 0.2;
+        sitecore.body.bounce.y = 1;
     }
 
     function create() {
