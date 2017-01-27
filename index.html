@@ -111,10 +111,12 @@
         //  Here we'll create 12 of them evenly spaced apart
         for (var i = 0; i < 12; i++) {
             var letter;
-            var random_letter = Math.random() * 3.0;
+            var random_letter = Math.random() * 4.0;
             console.log(random_letter);
             if (random_letter < 1) {
                 letter = 'e_transparent';
+            } else if (random_letter < 2) {
+                letter = 'o_transparent';
             } else {
                 letter = 'n_transparent';
             }
