@@ -55,12 +55,12 @@
         enemies = game.add.group();
         enemies.enableBody = true;
 
-        var drupal = enemies.create(Math.floor(Math.random() * game.world.width), Math.floor(Math.random() * game.world.height), 'drupal');
+        var drupal = enemies.create(Math.floor(Math.random() * game.world.width), 0, 'drupal');
         drupal.scale.setTo(0.15, 0.15);
         drupal.body.gravity.y = 300;
         drupal.body.bounce.y = 1;
 
-        var drupal2 = enemies.create(Math.floor(Math.random() * game.world.width), Math.floor(Math.random() * game.world.height), 'drupal');
+        var drupal2 = enemies.create(Math.floor(Math.random() * game.world.width), 0, 'drupal');
         drupal2.scale.setTo(0.15, 0.15);
         drupal2.body.gravity.y = 300;
         drupal2.body.bounce.y = 1;
