@@ -14,7 +14,8 @@
 
 <script type="text/javascript">
 
-    var game = new Phaser.Game(800, 600, Phaser.AUTO, '', {preload: preload, create: create, update: update});
+    var viewportWidth = 800, viewportHeight = 600;
+    var game = new Phaser.Game(viewportWidth, viewportHeight, Phaser.AUTO, '', {preload: preload, create: create, update: update});
 
     function preload() {
 
@@ -148,15 +149,25 @@
     }
 
     function moveCameraRight() {
-        game.camera.x += 2;
-        scoreText.position.x = scoreText.position.x + 2;
-        timeText.position.x = timeText.position.x + 2;
+        if(playerHasReachedCenterOfScreen()) {
+            game.camera.x += 2;
+            scoreText.position.x = scoreText.position.x + 2;
+            timeText.position.x = timeText.position.x + 2;
+        }
     }
 
     function moveCameraLeft() {
-        game.camera.x -= 2;
-        scoreText.position.x = scoreText.position.x - 2;
-        timeText.position.x = timeText.position.x - 2;
+        if(playerHasReachedCenterOfScreen()) {
+            game.camera.x -= 2;
+            if(scoreText.position.x > 18) {
+                scoreText.position.x = scoreText.position.x - 2;
+                timeText.position.x = timeText.position.x - 2;
+            }
+        }
+    }
+
+    function playerHasReachedCenterOfScreen() {
+        return player.position.x > (viewportWidth / 2);
     }
 
     function collectStar(player, star) {
@@ -166,7 +177,7 @@
 
         //  Add and update the score
         score += 10;
-        scoreText.text = 'Score: ' + score;
+        scoreText.text = 'score: ' + score;
 
     }
 
