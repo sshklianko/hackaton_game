@@ -57,21 +57,33 @@
 
         var drupal = enemies.create(Math.floor(Math.random() * game.world.width), Math.floor(Math.random() * game.world.height), 'drupal');
         drupal.scale.setTo(0.15, 0.15);
-
         drupal.body.gravity.y = 300;
         drupal.body.bounce.y = 1;
 
+        var drupal2 = enemies.create(Math.floor(Math.random() * game.world.width), Math.floor(Math.random() * game.world.height), 'drupal');
+        drupal2.scale.setTo(0.15, 0.15);
+        drupal2.body.gravity.y = 300;
+        drupal2.body.bounce.y = 1;
+
         var wordpress = enemies.create(Math.floor(Math.random() * game.world.width), 0, 'wordpress');
         wordpress.scale.setTo(0.15, 0.15);
-
         wordpress.body.gravity.y = 300;
         wordpress.body.bounce.y = 1;
 
+        var wordpress2 = enemies.create(Math.floor(Math.random() * game.world.width), 0, 'wordpress');
+        wordpress2.scale.setTo(0.15, 0.15);
+        wordpress2.body.gravity.y = 300;
+        wordpress2.body.bounce.y = 1;
+
         var sitecore = enemies.create(Math.floor(Math.random() * game.world.width), 0, 'sitecore');
         sitecore.scale.setTo(0.05, 0.05);
-
         sitecore.body.gravity.y = 300;
         sitecore.body.bounce.y = 1;
+
+        var sitecore2 = enemies.create(Math.floor(Math.random() * game.world.width), 0, 'sitecore');
+        sitecore2.scale.setTo(0.05, 0.05);
+        sitecore2.body.gravity.y = 300;
+        sitecore2.body.bounce.y = 1;
     }
 
     function create() {
