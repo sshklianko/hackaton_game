@@ -36,8 +36,10 @@
     var scoreText;
 
     var startTime;
-    var maxTime = 120;
+    var maxTime = 3;
     var timeText;
+
+    var gameOver = false;
 
     function create() {
 
@@ -135,21 +137,26 @@
         //  Reset the players velocity (movement)
         player.body.velocity.x = 0;
 
-        if (cursors.left.isDown) {
-            //  Move to the left
-            player.body.velocity.x = -300;
-        }
-        else if (cursors.right.isDown) {
-            //  Move to the right
-            player.body.velocity.x = 300;
+
+        if (!gameOver) {
+
+            if (cursors.left.isDown) {
+                //  Move to the left
+                player.body.velocity.x = -300;
+            }
+            else if (cursors.right.isDown) {
+                //  Move to the right
+                player.body.velocity.x = 300;
+            }
+
+            //  Allow the player to jump if they are touching the ground.
+            if (cursors.up.isDown && player.body.touching.down) {
+                player.body.velocity.y = -400;
+            }
+
+            updateTime();
         }
 
-        //  Allow the player to jump if they are touching the ground.
-        if (cursors.up.isDown && player.body.touching.down) {
-            player.body.velocity.y = -400;
-        }
-
-        updateTime();
 
     }
 
@@ -165,7 +172,16 @@
     }
 
     function updateTime() {
-        timeText.text = 'time: ' + (maxTime - Math.floor((new Date().getTime() - startTime) / 1000));
+        var time = Math.max(0, (maxTime - Math.floor((new Date().getTime() - startTime) / 1000)));
+        timeText.text = 'time: ' + time;
+        if (time == 0) {
+            setGameOver();
+        }
+    }
+
+    function setGameOver() {
+        game.add.text(200, 280, 'GAME OVER!', {fontSize: '64px', fill: '#000'});
+        gameOver = true;
     }
 
 </script>
