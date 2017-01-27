@@ -167,7 +167,7 @@
         game.camera.follow(player, Phaser.Camera.FOLLOW_TOPDOWN_TIGHT);
         game.camera.bounds.setTo(0, 0, 4000, 600);
 
-        createEnemies();
+        //createEnemies();
     }
 
     function createClouds() {
@@ -176,6 +176,10 @@
         createCloud(1400, 200);
         createCloud(1800, 100);
         createCloud(2100, 100);
+        createCloud(2200, 400);
+        createCloud(2600, 400);
+        createCloud(2800, 300);
+        createCloud(3200, 300);
     }
 
     function createCloud(x, y) {
