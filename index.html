@@ -39,7 +39,7 @@
     var scoreText;
 
     var startTime;
-    var maxTime = 3;
+    var maxTime = 60;
     var timeText;
 
     var gameOver = false;
@@ -104,7 +104,7 @@
             var letter;
             var random_letter = Math.random() * 3.0;
             console.log(random_letter);
-            if (random_letter < 1 ) {
+            if (random_letter < 1) {
                 letter = 'e_transparent';
             } else {
                 letter = 'n_transparent';
