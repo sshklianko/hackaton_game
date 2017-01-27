@@ -123,7 +123,7 @@
         stars.enableBody = true;
 
         //  Here we'll create 12 of them evenly spaced apart
-        for (var i = 0; i < 12; i++) {
+        for (var i = 0; i < 25; i++) {
             var letter;
             var random_letter = Math.random() * 4.0;
             console.log(random_letter);
@@ -136,7 +136,7 @@
             }
 
             //  Create a star inside of the 'stars' group
-            var star = stars.create(i * 70, 0, letter);
+            var star = stars.create(Math.random() * 4000, 0, letter);
 
             //  Let gravity do its thing
             star.body.gravity.y = 300;
