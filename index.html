@@ -36,7 +36,7 @@
     var scoreText;
 
     var startTime;
-    var endTime;
+    var maxTime = 120;
     var timeText;
 
     function create() {
@@ -149,7 +149,7 @@
     }
 
     function moveCameraRight() {
-        if(playerHasReachedCenterOfScreen()) {
+        if (playerHasReachedCenterOfScreen()) {
             game.camera.x += 2;
             scoreText.position.x = scoreText.position.x + 2;
             timeText.position.x = timeText.position.x + 2;
@@ -157,9 +157,9 @@
     }
 
     function moveCameraLeft() {
-        if(playerHasReachedCenterOfScreen()) {
+        if (playerHasReachedCenterOfScreen()) {
             game.camera.x -= 2;
-            if(scoreText.position.x > 18) {
+            if (scoreText.position.x > 18) {
                 scoreText.position.x = scoreText.position.x - 2;
                 timeText.position.x = timeText.position.x - 2;
             }
@@ -182,7 +182,7 @@
     }
 
     function updateTime() {
-        timeText.text = 'time: ' + Math.floor((new Date().getTime() - startTime) / 1000);
+        timeText.text = 'time: ' + (maxTime - Math.floor((new Date().getTime() - startTime) / 1000));
     }
 
 </script>
